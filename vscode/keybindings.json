@@ -1,0 +1,21 @@
+[
+	{
+		"key": "ctrl+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		"key": "ctrl+m",
+		"command": "",
+		"when": ""
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "",
+		"when": ""
+	},
+	{
+		"key": "ctrl+[Semicolon]",
+		"command": "workbench.action.terminal.toggleTerminal"
+	}
+]
