@@ -221,7 +221,7 @@ pacman -S xf86-video-amdgpu xf86-input-libinput \
 		  openssh openssh-dinit \
 		  dmenu scrot less man-db \
 		  alacritty otf-commit-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji \
-		  nsxiv yt-dlp \
+		  nsxiv mpv yt-dlp zathura zathura-pdf-poppler typst \
 		  vscodium bitwarden obs-studio
 ```
 I installed relevant drivers, if you have an Nvidia GPU you would install Nvidia drivers(nvidia) instead of AMD ones(xf86-video-amdgpu) and if you had an Intel CPU you would install Intel's micrcode(intel-ucode) instead of the AMD one(amd-ucode). 
@@ -279,7 +279,7 @@ dinitctl enable bluetoothd
 dinitctl enable dockerd
 ```
 #### Install what you can't get from the repos
-For me it's the HTTPie desktop client, the Thorium browser and the Zen browser which I all get from the AUR.
+I install Thorium browser, Zen browser, HTTPie desktop, Spotify and go-mtpfs(to access Android devices storage) from the AUR!
 ```sh
 # Installing something from the AUR without a helper like yay or paru
 git clone https://aur.archlinux.org/httpie-desktop-bin
