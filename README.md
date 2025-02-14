@@ -208,8 +208,8 @@ Server = https://omniverse.artixlinux.org/$arch
 Read more about [Artix repositories](https://wiki.artixlinux.org/Main/Repositories)
 #### Installling packages
 ```sh
-pacman -S xf86-video-amdgpu xf86-input-libinput \
-		  git gpg github-cli wget curl httpie rsync rclone zip unzip 7zip \
+pacman -S xf86-video-amdgpu xf86-input-libinput amdvlk \
+		  git gpg github-cli wget aria2 curl httpie rsync rclone zip unzip 7zip \
 		  dhcpcd dhcpcd-dinit nftables nftables-dinit \
 		  thermald thermald-dinit \
 		  bluez bluez-dinit bluez-utils \
@@ -222,7 +222,7 @@ pacman -S xf86-video-amdgpu xf86-input-libinput \
 		  dmenu scrot less man-db \
 		  alacritty otf-commit-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji \
 		  nsxiv mpv yt-dlp zathura zathura-pdf-poppler typst \
-		  vscodium bitwarden obs-studio
+		  vscodium gvim bitwarden obs-studio
 ```
 I installed relevant drivers, if you have an Nvidia GPU you would install Nvidia drivers(nvidia) instead of AMD ones(xf86-video-amdgpu) and if you had an Intel CPU you would install Intel's micrcode(intel-ucode) instead of the AMD one(amd-ucode). 
 
@@ -239,6 +239,7 @@ Details on possibly less known packages I am installing
 * audio is served by pipewire which I find nicer then pulseaudio
 * docker is cool and I use it a lot
 * nsxiv is the continuation of sxiv
+* gvim will provide a vim build with display server clipboard support
 #### Reboot into the new system
 ```sh
 reboot
@@ -362,13 +363,15 @@ faillock --user alberto -reset
 ```sh
 vim /etc/rc.local
 ```
-In case bluetooth it's not working for you
+* Bluetooth it's not working for you
 ```sh
 #!/bin/sh
 # rc.local for Artix -- enter your commands here
 # it should be run when starting local.target service
 rfkill unblock bluetooth
 ```
+I start pipewire and use xinput to set my touchpad scrolling sensitivity in i3/config
+* You can use ctrl+shift+space to go in vim mode inside alacritty
 
 ## Windows 11
 ![desktop](screenshots/screen.png)
