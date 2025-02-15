@@ -280,13 +280,14 @@ dinitctl enable bluetoothd
 dinitctl enable dockerd
 ```
 #### Install what you can't get from the repos
-I install Thorium browser, Zen browser, HTTPie desktop, Spotify and go-mtpfs(to access Android devices storage) from the AUR!
+I install Thorium browser, HTTPie desktop, Spotify and go-mtpfs(to access Android devices storage) from the AUR!
 ```sh
 # Installing something from the AUR without a helper like yay or paru
 git clone https://aur.archlinux.org/httpie-desktop-bin
 cd httpie-desktop-bin
 makepkg -si
 ```
+My .zshrc will add ~/path to $PATH for you to add stuff to it
 ```sh
 # Installing go packages I need
 go install github.com/go-delve/delve/cmd/dlv@latest
