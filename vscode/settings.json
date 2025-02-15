@@ -96,6 +96,7 @@
 	},
 	"editor.wordBasedSuggestions": "off",
 	// vim
+	"vim.surround": true,
 	"vim.cursorStylePerMode.insert": "block",
 	"vim.hlsearch": true,
 	"vim.incsearch": true,
@@ -107,9 +108,55 @@
 		"<C-a>": false,
 		"<C-b>": false,
 		"<C-f>": false,
-		"<C-s>": false
+		"<C-s>": false,
+		"<C-n>": false,
 	},
 	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"f"
+			],
+			"after": [
+				"%"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"v",
+				"i"
+			],
+			"after": [
+				"V",
+				"i",
+				"B"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"v",
+				"a"
+			],
+			"after": [
+				"V",
+				"a",
+				"B"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"c",
+				"x"
+			],
+			"after": [
+				"V",
+				"a",
+				"B"
+			],
+			"commands": []
+		},
 		{
 			"before": [
 				"C-o"
@@ -134,4 +181,5 @@
 	"security.allowedUNCHosts": [
 		"wsl.localhost"
 	],
+	"security.workspace.trust.untrustedFiles": "open",
 }

@@ -9,10 +9,12 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 " Settings
 set autoread
-set nocompatible
-set termguicolors
 set backspace=indent,eol,start
+set clipboard=unnamedplus
+set showtabline=2
+set nocompatible
 set scrolloff=10
+set termguicolors
 "" Preserve your sanity
 set paste
 set formatoptions-=cro
@@ -47,7 +49,7 @@ map <C-p> :Rexplore<CR>
 
 " Mappings
 "" Jumps
-map ff %
+map f %
 "" Selection
 map vi ViB
 map va VaB
@@ -64,17 +66,18 @@ map - dd
 "" Special
 map <C-w>n :tabnew<CR>
 map <C-w><Tab> :tabnext<CR>
+map <C-w>p :tabprevious<CR>
 map <C-a> ggVG
-" Clipboard
-vnoremap Y :w !xclip -selection clipboard<CR><CR>
 
 " Plugins
+runtime ftplugin/man.vim
 call plug#begin()
 Plug 'akiicat/vim-github-theme'
-Plug 'airblade/vim-gitgutter'
 Plug 'farmergreg/vim-lastplace'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'azabiong/vim-highlighter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 "" Gutter
 map <C-w>g :GitGutterToggle<CR>

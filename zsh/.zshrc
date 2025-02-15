@@ -22,6 +22,7 @@ export EDITOR="vim"
 alias ls="ls --group-directories-first -gh"
 alias grep='grep --color=auto'
 alias objdump='objdump -M intel'
+alias ss="ss -l -n -t"
 
 PATH="$PATH:$HOME/path"
 PATH="$PATH:$HOME/go/bin"

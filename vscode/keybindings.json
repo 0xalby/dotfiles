@@ -5,8 +5,8 @@
 		"when": "viewContainer.workbench.view.explorer.enabled"
 	},
 	{
-		"key": "ctrl+m",
-		"command": "",
+		"key": "ctrl+t",
+		"command": "workbench.action.files.newUntitledFile",
 		"when": ""
 	},
 	{
@@ -15,7 +15,7 @@
 		"when": ""
 	},
 	{
-		"key": "ctrl+[Semicolon]",
+		"key": "ctrl+shift+[Semicolon]",
 		"command": "workbench.action.terminal.toggleTerminal"
 	}
 ]
