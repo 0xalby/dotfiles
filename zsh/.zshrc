@@ -24,7 +24,10 @@ alias grep='grep --color=auto'
 alias objdump='objdump -M intel'
 alias ss="ss -l -n -t"
 
-PATH="$PATH:$HOME/path"
+for dir in $HOME/path/*/; do 
+    PATH+=":$dir"
+done
+
 PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:/usr/local/go/bin"
 

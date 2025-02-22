@@ -15,7 +15,15 @@
 		"when": ""
 	},
 	{
+		"key": "ctrl+[Semicolon]",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
 		"key": "ctrl+shift+[Semicolon]",
 		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": ""
 	}
 ]

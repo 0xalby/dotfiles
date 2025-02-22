@@ -209,7 +209,7 @@ Read more about [Artix repositories](https://wiki.artixlinux.org/Main/Repositori
 #### Installling packages
 ```sh
 pacman -S xf86-video-amdgpu xf86-input-libinput amdvlk \
-		  git gpg github-cli wget aria2 curl httpie rsync rclone zip unzip 7zip \
+		  git gpg github-cli wget aria2 curl rsync rclone zip unzip 7zip \
 		  dhcpcd dhcpcd-dinit nftables nftables-dinit \
 		  thermald thermald-dinit \
 		  bluez bluez-dinit bluez-utils \
@@ -230,7 +230,6 @@ You may need some other drivers based on your hardware(like xf86-input-libinput 
 
 Details on possibly less known packages I am installing
 * git is the world's most famous version control system and Github now has a CLI made in Go called gh
-* httpie is a modern take on curl
 * rclone is my favorite way to backup what I need on Google Drive and such
 * dhcpcd is a good DHCP server and nftables are the successor of iptables if you want a firewall
 * thermald is for better cooling
@@ -280,7 +279,7 @@ dinitctl enable bluetoothd
 dinitctl enable dockerd
 ```
 #### Install what you can't get from the repos
-I install Thorium browser, HTTPie desktop, Spotify and go-mtpfs(to access Android devices storage) from the AUR!
+I install Thorium browser, HTTPie Desktop, Spotify and go-mtpfs(to access Android devices storage) from the AUR!
 ```sh
 # Installing something from the AUR without a helper like yay or paru
 git clone https://aur.archlinux.org/httpie-desktop-bin
