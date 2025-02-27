@@ -1,0 +1,29 @@
+[
+	{
+		"key": "ctrl+e",
+		"command": "workbench.view.explorer",
+		"when": "viewContainer.workbench.view.explorer.enabled"
+	},
+	{
+		"key": "ctrl+t",
+		"command": "workbench.action.files.newUntitledFile",
+		"when": ""
+	},
+	{
+		"key": "ctrl+shift+v",
+		"command": "",
+		"when": ""
+	},
+	{
+		"key": "ctrl+[Semicolon]",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+[Semicolon]",
+		"command": "workbench.action.terminal.toggleTerminal"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": ""
+	}
+]

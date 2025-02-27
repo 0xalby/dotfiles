@@ -1,0 +1,150 @@
+set $mod Mod4
+
+set $left_screen HDMI-A-0
+set $right_screen eDP
+workspace 1 output $left_screen
+workspace 2 output $right_screen
+workspace 3 output $right_screen
+workspace 4 output $right_screen
+workspace 5 output $right_screen
+workspace 6 output $right_screen
+workspace 7 output $right_screen
+workspace 8 output $right_screen
+
+font pango:CommitMonoNerdFont 8
+
+# gap
+gaps horizontal 0
+gaps vertical 0
+
+# border
+default_border pixel 2
+default_floating_border pixel 4
+# smart_borders on
+
+# color
+client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
+
+# start a terminal
+bindsym $mod+Return exec alacritty
+# kill focused window
+bindsym $mod+Shift+q kill
+# dmenu
+bindsym $mod+p exec --no-startup-id dmenu_run -sf "#8ae234" -sb "#000000" -nf "#ffffff" -nb "#000000"
+# vscode
+bindsym $mod+space exec codium
+# chromium
+bindsym $mod+c exec thorium-browser
+# lock the screen
+bindsym $mod+Shift+o exec i3lock -u --color="#000000"
+# take a screenshot
+bindsym $mod+Shift+s exec scrot -s ~/pictures/screenshots/%F_%T.png -e 'xclip -selection clipboard -target image/png -i $f'
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+# alternatively, you can use the cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+# alternatively, you can use the cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# split in horizontal orientation
+bindsym $mod+s split h
+# split in vertical orientation
+bindsym $mod+v split v
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+z layout stacking
+bindsym $mod+Shift+x layout tabbed
+bindsym $mod+Shift+c layout toggle split
+# toggle tiling / floating
+bindsym $mod+g floating toggle
+
+# define workspaces names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+
+# switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+Tab focus output next
+
+# assign
+assign [class="^VSCodium"] 2
+assign [class="^Thorium"] 1
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+
+# reload the configuration file
+bindsym $mod+Shift+e reload
+# restart i3 inplace preserving your layout/session
+bindsym $mod+Shift+r restart
+
+# resize a window
+mode "resize" {
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
+        # same bindings, but for the arrow keys
+        bindsym Right resize shrink width 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
+        bindsym Left resize grow width 10 px or 10 ppt
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# focus
+focus_follows_mouse no
+
+# i3status
+bar {
+        position bottom
+        mode dock
+        font pango:CommitMonoNerdFont, Bold 10
+        status_command i3status
+        colors {
+            focused_workspace #000000 #ffffff 
+        }
+}
+
+# startup
+exec_always pipewire &
+exec_always xinput --set-prop 12 "libinput Scrolling Pixel Distance" 20 &

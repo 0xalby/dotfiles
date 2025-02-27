@@ -1,0 +1,185 @@
+// I use this extensions: "Github Theme, Go, Tynimist Typst and Vim"
+{
+	// changing
+	"workbench.colorTheme": "GitHub Dark Default",
+	"editor.fontFamily": "CommitMono Nerd Font Mono",
+	"editor.fontWeight": "bold",
+	"terminal.integrated.fontWeight": "bold",
+	"window.zoomLevel": 1,
+	"editor.fontSize": 16,
+	"editor.wordWrap": "on",
+	"files.autoSave": "onWindowChange",
+	"terminal.integrated.fontSize": 16,
+	"window.menuBarVisibility": "toggle",
+	// colored markdown headers
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "heading.1.markdown entity.name.section.markdown, heading.1.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#FA7970"
+				}
+			},
+			{
+				"scope": "heading.2.markdown entity.name.section.markdown, heading.2.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#FAA356"
+				}
+			},
+			{
+				"scope": "heading.3.markdown entity.name.section.markdown, heading.3.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#7CE38B"
+				}
+			},
+			{
+				"scope": "heading.4.markdown entity.name.section.markdown, heading.4.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#77BDFB"
+				}
+			},
+			{
+				"scope": "heading.5.markdown entity.name.section.markdown, heading.5.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#CEA5FB"
+				}
+			},
+			{
+				"scope": "heading.6.markdown entity.name.section.markdown, heading.6.markdown punctuation.definition.heading.markdown",
+				"settings": {
+					"foreground": "#ECF2F8"
+				}
+			}
+		]
+	},
+	// not changing
+	"breadcrumbs.enabled": true,
+	"diffEditor.renderIndicators": false,
+	"diffEditor.renderSideBySide": false,
+	"editor.accessibilitySupport": "off",
+	"editor.autoClosingBrackets": "never",
+	"editor.cursorBlinking": "solid",
+	"editor.cursorStyle": "block",
+	"editor.cursorSurroundingLines": 10,
+	"editor.folding": false,
+	"editor.formatOnSave": true,
+	"editor.glyphMargin": false,
+	"editor.guides.indentation": false,
+	"editor.hideCursorInOverviewRuler": true,
+	"editor.lineNumbers": "on",
+	"editor.minimap.enabled": false,
+	"editor.overviewRulerBorder": false,
+	"editor.renderLineHighlight": "none",
+	"editor.roundedSelection": false,
+	"editor.stickyScroll.enabled": false,
+	"editor.tabSize": 4,
+	"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+	"explorer.compactFolders": false,
+	"explorer.confirmDelete": false,
+	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmPasteNative": false,
+	"extensions.ignoreRecommendations": true,
+	"json.schemas": [],
+	"telemetry.telemetryLevel": "off",
+	"vim.cursorStylePerMode.normal": "block",
+	"window.closeWhenEmpty": true,
+	"workbench.activityBar.location": "hidden",
+	"workbench.enableExperiments": false,
+	"workbench.startupEditor": "none",
+	// suggestions
+	"editor.acceptSuggestionOnEnter": "on",
+	"editor.insertSpaces": false,
+	"editor.quickSuggestions": {
+		"comments": false,
+		"other": true,
+		"strings": false
+	},
+	"editor.wordBasedSuggestions": "off",
+	// vim
+	"vim.surround": true,
+	"vim.cursorStylePerMode.insert": "block",
+	"vim.hlsearch": true,
+	"vim.incsearch": true,
+	"vim.ignorecase": true,
+	"vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
+	"vim.useCtrlKeys": true,
+	"vim.useSystemClipboard": true,
+	"vim.handleKeys": {
+		"<C-a>": false,
+		"<C-b>": false,
+		"<C-f>": false,
+		"<C-s>": false,
+		"<C-n>": false,
+	},
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"f"
+			],
+			"after": [
+				"%"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"v",
+				"i"
+			],
+			"after": [
+				"V",
+				"i",
+				"B"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"v",
+				"a"
+			],
+			"after": [
+				"V",
+				"a",
+				"B"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"c",
+				"x"
+			],
+			"after": [
+				"V",
+				"a",
+				"B"
+			],
+			"commands": []
+		},
+		{
+			"before": [
+				"C-o"
+			],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.quickOpen"
+				}
+			]
+		}
+	],
+	// go
+	"go.formatTool": "gofmt",
+	"go.toolsManagement.autoUpdate": true,
+	"go.useLanguageServer": true,
+	// tailwindcss
+	"tailwindCSS.includeLanguages": {
+		"templ": "html"
+	},
+	// wsl2
+	"security.allowedUNCHosts": [
+		"wsl.localhost"
+	],
+	"security.workspace.trust.untrustedFiles": "open"
+}

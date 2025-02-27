@@ -1,0 +1,54 @@
+general {
+        colors = false
+        interval = 5
+}
+
+order += "disk /"
+order += "disk /secondary"
+order += "run_watch DHCP"
+order += "run_watch DOCKER"
+order += "ethernet eth0"
+order += "battery 0"
+order += "load"
+order += "tztime local"
+
+/*
+read_file MOTD {
+        format = "%title: %content"
+        path = "~/.config/i3/motd"
+}
+*/
+
+disk "/" {
+        format = "%free"
+}
+
+disk "/secondary" {
+        format = "%free"
+}
+
+run_watch DHCP {
+        pidfile = "/var/run/dhcpcd/pid"
+}
+
+run_watch DOCKER {
+        pidfile = "/var/run/docker.pid"
+}
+
+ethernet eth0 {
+        format_up = "E: up"
+        format_down = "E: down"
+}
+
+battery 0 {
+        format = "%status %percentage %remaining"
+}
+
+load {
+        format = "%1min"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
