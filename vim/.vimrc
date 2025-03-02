@@ -120,7 +120,6 @@ if exists("+showtabline")
             let s .= (i == t ? '%1*' : '%2*')
             let s .= ' '
             let wn = tabpagewinnr(i,'$')
-
             let s .= '%#TabNum#'
             let s .= i
             " let s .= '%*'

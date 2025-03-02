@@ -306,20 +306,20 @@ dinitctl enable thermald
 #### Install what you need from the AUR(Arch User Repository)
 What do I install?
 * thorium-browser-bin as my browser of choice(optimized Chromium fork)
-* httpie-desktop-bin
+* httpie-desktop-bin which is an http graphical client
 * spotify
 * cemu-bin WiiU emulator just because
 * go-mtpfs-git to mount Android devices
 ```zsh
 # Installing something from the AUR without a helper(like yay and paru)
-git clone https://aur.archlinux.org/httpie-desktop-bin
-cd httpie-desktop-bin
+git clone https://aur.archlinux.org/thorium-browser-bin
+cd thorium-browser-bin
 makepkg -si
 ```
 
 ![httpie](./screenshots/httpie.png)
 ![cemu](./screenshots/cemu.png)
-#### Installing Go utilities
+#### Installing Go utilities I need
 ```zsh
 go install github.com/Zxilly/go-size-analyzer/cmd/gsa@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
@@ -394,16 +394,26 @@ vim /etc/rc.local
 ```
 Let's say bluetooth is not working for you
 ```zsh
-#!/bin/sh
-# rc.local for Artix -- enter your commands here
-# it should be run when starting local.target service
+# Should be run when starting local.target service
 rfkill unblock bluetooth
 ```
 * You can use ctrl+shift+space to go in vim mode inside alacritty
 It's so good
+* Load kernel modules with modprobe
+```zsh
+# See all the modules
+ls /usr/lib/modules/KERNEL
+# Load support for the Playstation Dualsense
+sudo modprobe usbhid 
+sudo modprobe joydev
+sudo modprobe hid-playstation
+# Also adding Nintendo controllers support
+sudo modprobe hid-nintendo
+```
 
-## Notes
-I start pipewire and use xinput to set my touchpad scrolling sensitivity in i3/config be aware
+## Be aware
+At the end of my .i3/config I start pipewire(and in .xinitrc I start wireplumber) so my audio works flawlessly
+Also using xinput to set my touchpad scrolling sensitivity after starting pipewire
 
 ## Windows 11
 My old Windows 11 system

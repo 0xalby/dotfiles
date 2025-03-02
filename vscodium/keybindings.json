@@ -5,16 +5,6 @@
 		"when": "viewContainer.workbench.view.explorer.enabled"
 	},
 	{
-		"key": "ctrl+t",
-		"command": "workbench.action.files.newUntitledFile",
-		"when": ""
-	},
-	{
-		"key": "ctrl+shift+v",
-		"command": "",
-		"when": ""
-	},
-	{
 		"key": "ctrl+[Semicolon]",
 		"command": "workbench.action.terminal.toggleTerminal"
 	},
@@ -23,7 +13,18 @@
 		"command": "workbench.action.terminal.toggleTerminal"
 	},
 	{
-		"key": "ctrl+shift+m",
+		"key": "ctrl+t",
+		"command": "workbench.action.files.newUntitledFile",
+		"when": ""
+	},
+	// Disabled
+	{
+		"key": "ctrl+shift+v",
+		"command": "",
+		"when": ""
+	},
+	{
+		"key": "ctrl+m",
 		"command": ""
 	}
 ]

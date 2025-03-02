@@ -25,7 +25,8 @@ alias objdump='objdump -M intel'
 alias ss="ss -l -n -t"
 
 PATH="$PATH:$HOME/go/bin"
-PATH="$PATH:/usr/local/go/bin"
+PATH="$PATH:$HOME/path"
+export PATH
 
 # plugins
 source $HOME/.colored.zsh
