@@ -3,11 +3,8 @@ set $mod Mod4
 set $left_screen HDMI-A-0
 set $right_screen eDP
 workspace 1 output $left_screen
-workspace 2 output $right_screen
+workspace 2 output $left_screen
 workspace 3 output $right_screen
-workspace 4 output $right_screen
-workspace 5 output $right_screen
-workspace 6 output $right_screen
 
 font pango:CommitMonoNerdFont 8
 
@@ -18,7 +15,6 @@ gaps vertical 0
 # border
 default_border pixel 2
 default_floating_border pixel 4
-# smart_borders on
 
 # color
 client.focused #ffffff #ffffff #ffffff #ffffff #ffffff
@@ -28,11 +24,11 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 # dmenu
-bindsym $mod+p exec --no-startup-id dmenu_run -sf "#8ae234" -sb "#000000" -nf "#ffffff" -nb "#000000"
+bindsym $mod+d exec --no-startup-id dmenu_run -sf "#8ae234" -sb "#000000" -nf "#ffffff" -nb "#000000"
 # vscode
-bindsym $mod+space exec codium ~/alby
+bindsym $mod+space exec codium ~/alby; workspace number $ws1
 # chromium
-bindsym $mod+c exec thorium-browser
+bindsym $mod+c exec thorium-browser; workspace number $ws2
 # lock the screen
 bindsym $mod+Shift+o exec i3lock -u --color="#000000"
 # take a screenshot
@@ -74,30 +70,21 @@ bindsym $mod+g floating toggle
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
-bindsym $mod+4 workspace number $ws4
-bindsym $mod+5 workspace number $ws5
-bindsym $mod+6 workspace number $ws6
-bindsym $mod+Tab focus right
 
 # assign
-assign [class="^VSCodium"] 2
-assign [class="^Thorium"] 1
+assign [class="^VSCodium"] 1
+assign [class="^Thorium"] 2
+assign [class="^Alacritty"] 3
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move container to workspace number $ws4
-bindsym $mod+Shift+5 move container to workspace number $ws5
-bindsym $mod+Shift+6 move container to workspace number $ws6
 
 # reload the configuration file
 bindsym $mod+Shift+e reload

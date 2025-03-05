@@ -23,6 +23,8 @@ alias ls="ls --group-directories-first -gh"
 alias grep='grep --color=auto'
 alias objdump='objdump -M intel'
 alias ss="ss -l -n -t"
+alias yt-mp4="yt-dlp -f 'best[ext=mp4]'"
+alias yt-m4a="yt-dlp -f 'bestaudio[ext=m4a]'"
 
 PATH="$PATH:$HOME/go/bin"
 PATH="$PATH:$HOME/path"

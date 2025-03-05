@@ -1,0 +1,5 @@
+# m h dom mon dow user command
+
+# At minute 0 of every hour
+0 * * * * rsync alberto ~/alby /secondary
+0 */6 * * * rsync alberto ~/git /secondary

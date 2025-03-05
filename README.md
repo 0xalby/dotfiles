@@ -63,7 +63,7 @@ vim /etc/pacman.d/mirrorlist
 ```
 #### Install base, the kernel and more
 ```zsh
-basestrap -i /mnt base base-devel dinit elogind-dinit linux linux-headers linux-firmware cryptsetup lvm2 lvm2-dinit efibootmgr vim
+basestrap -i /mnt base base-devel dinit elogind-dinit linux linux-headers linux-firmware cryptsetup lvm2 lvm2-dinit efibootmgr zsh vim
 ```
 #### Install your drivers like CPU microcode(amd-ucode or intel-ucode), GPU drivers(xf86-video-amdgpu or nvidia) and more
 ```zsh
@@ -204,7 +204,7 @@ Read more about [Artix repositories](https://wiki.artixlinux.org/Main/Repositori
 #### Installling packages
 ```zsh
 pacman -S man-db gpg git github-cli wget aria2 curl rsync \
-		  zip unzip 7zip \
+		  atool zip unzip unrar 7zip \
 		  dhcpcd dhcpcd-dinit \
 		  nftables nftables-dinit \
 		  thermald thermald-dinit \
@@ -219,7 +219,7 @@ pacman -S man-db gpg git github-cli wget aria2 curl rsync \
 		  openssh openssh-dinit \
 		  otf-commit-mono-nerd noto-fonts noto-fonts-cjk noto-fonts-emoji \
 		  nsxiv mpv yt-dlp zathura zathura-pdf-poppler typst pandoc \
-		  alacritty vscodium gvim bitwarden obs-studio 
+		  alacritty vscodium gvim bitwarden obs-studio
 ```
 Details on possibly less known packages I am installing
 * git is the world's most famous version control system and GitHub now has a CLI made in Go called gh
@@ -308,7 +308,7 @@ What do I install?
 * thorium-browser-bin as my browser of choice(optimized Chromium fork)
 * httpie-desktop-bin which is an http graphical client
 * spotify
-* cemu-bin WiiU emulator just because
+* cemu-bin WiiU emulator just because(also getting Ryujinx for Switch emulation)
 * go-mtpfs-git to mount Android devices
 ```zsh
 # Installing something from the AUR without a helper(like yay and paru)
@@ -319,6 +319,7 @@ makepkg -si
 
 ![httpie](./screenshots/httpie.png)
 ![cemu](./screenshots/cemu.png)
+![ryujinx](./screenshots/ryujinx.png)
 #### Installing Go utilities I need
 ```zsh
 go install github.com/Zxilly/go-size-analyzer/cmd/gsa@latest
@@ -345,19 +346,6 @@ git config --global user.email "albertochdev@gmail.com"
 git config --global core.editor "codium --wait"
 gh auth login
 ```
-#### Optionally virtualize Windows 11 with Virt Manager and KVM
-```zsh
-pacman -S qemu virt-manager libvirt libvirt-dinit edk2-ovmf bridge-utils dnsmasq
-dinitctl enable libvirtd
-usermod -aG libvirt alberto
-# Add virtualization modules
-vim /etc/mkinitcpio.conf
-```
-```zsh
-MODULES="vfio vfio_iommu_type1 vfio_pci vfio_virqfd irqbypass kvm kvm_amd xhci_hcd"
-# Reboot and install your virtual machine with virt-manager
-```
-You could also pass in a GPU with virtio to use graphically intensive applications like a video editor or high end games in the virtual machine.
 
 ## FAQ
 * Why would you put yourself through all this pain?
@@ -372,6 +360,8 @@ Sure, but I am still installing a browser on this making everything related to m
 I guess troubleshooting is the price to pay.
 * I love this and thank your for making me discover some of this stuff!
 You are welcome, if you need anything just hit me up.
+* Fuck I really need this Window program or non wine/proton compatible and not emulatable game to run...
+It is possible to virtualize a Windows(and more then that) installation using libvirt and KVM passing your GPU to it(called GPU passthrough) with virtio to run anything you want with almost barebones performance check it out.
 
 ## How do I?
 * Do anything related to audio? Use pulsemixer
